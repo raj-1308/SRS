@@ -1,0 +1,206 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+.background-img::before{
+    filter: blur(5px);
+}
+.background-img{
+    height: 100vh;
+    width: 100%;
+    background-color: white;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-image: url(men.jpg);
+    background-size: cover; */
+    position: relative;
+    z-index: 0;
+}
+
+.background-img::before{
+    content: '';
+    position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-image: url(phtot1.jpg);
+   background-size: cover;
+   z-index: -1;
+   opacity: 0.8;
+}
+.greeting h1{
+   z-index: 2;
+   color: black;
+   font-weight: 800;
+   transform: scale(1.6);
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   margin: 0.85rem;
+   padding-bottom: 0.6rem;
+}
+.greeting {
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.76rem;
+    opacity: 0;
+    transition: opacity 2s ease, transform 2s ease;
+transform: translateY(-200px);
+}
+.greeting.show{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.main-form{
+    height: 70vh;
+    width: 60%;
+    background-color: #F8FAFC;
+    z-index: 11;
+    border-radius: 20px;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.348) ;
+   display: grid;
+   grid-template-rows: 0.2fr 1fr;
+    opacity: 0;
+    transition: opacity 2s ease,transform 2s ease;
+    transform: translateY(-50px);
+}
+.main-form.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+ .main-form .login-label{
+     /* grid-row: 1/3;  */
+    grid-column: 1/13;
+    display: flex;
+  align-items: center;
+  border-bottom: 0.2px solid grey;
+} 
+.main-form .form{
+    /* grid-row: 3/13; */
+    grid-column: 1/5; 
+}
+.main-form .img{
+    /* grid-row: 5/13;*/
+    grid-column:7/13; 
+ background-image: url(login-side.jpg);
+ background-size: cover;
+ border-radius: 20px;
+ /* animation: rotateing 6s ease 2s 1 normal; */
+}
+@keyframes rotateing{
+    0% {
+   transform:rotate(0deg);
+    }
+    25%{
+      transform: rotate(90deg);
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+    75%{
+        transform: rotate(270deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+ .login-label img{
+    height: 100%;
+    width: 12%;
+    border-radius: 30px;
+    opacity: 1;
+}
+
+.login-label h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 600;
+    margin-left: 35%;
+   font-size: 2.5rem;
+}
+.main-form .form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 6rem;
+}
+.main-form .form label{
+     font-size: 1.5rem;
+     display: inline-block;
+     font-weight: 300;
+     font-family: Georgia, 'Times New Roman', Times, serif;
+     margin: 0 0 1rem 2rem;
+}
+.main-form .form input{
+    height: 50px;
+    border-radius: 20px;
+    border: 0.5px solid black;
+    color: black;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: start;
+    margin: 0 0 1rem 2rem;
+    padding-left: 0.8rem;
+    background-color: azure;
+}
+.main-form .form button{
+    height: 50px;
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin: 0 0 1rem 2rem;
+    margin-top: 1.5rem;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.form .forget_Password{
+    color: black;
+    text-align: center;
+}
+.form .forget_Password:hover{
+    color: blue;
+    transform: scale(1.19);
+}
+.main-form .form button:hover{
+    box-shadow: 2px 2px 10px grey;
+}
+.form h3{
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    position: relative;
+    top: 3rem;
+    font-size: 0.97rem;
+    color: grey;
+}
+
+@media (max-width:900px){
+    .main-form .img{
+        display: none;
+    }
+    .login-label img{
+        display: none;
+    }
+}
+@media (max-width:450px){
+    .main-form{
+        justify-content: flex-start;
+    }
+    .greeting {
+        flex-wrap: wrap;
+    }
+    .login-label h1{
+        font-size: 1.5rem;
+    }
+    .form label{
+        font-size: 0.5rem;
+    }
+    .form input{
+        height: 70px;
+        width: 50%;
+    }
+}
